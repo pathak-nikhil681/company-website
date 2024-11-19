@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>technotwist</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@200;300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .team-section {
+            padding: 50px 20px;
+            background-color: #f8f9fa;
+
+        }
+
+        .team-heading {
+            font-size: 50px;
+            font-weight: 700;
+            color: #000000;
+            margin-left: 35px;
+
+        }
+
+        .team-paragraph {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin-left: 35px;
+            line-height: 1.6;
+
+        }
+
+        .team-paragraph-2 {
+            font-size: 1.2rem;
+            color: #181717;
+            margin-left: 35px;
+            margin-top: 60px;
+
+
+        }
+
+        .breadcrumb-link {
+            color: #020202;
+            text-decoration: none;
+
+        }
+
+        .breadcrumb-link:hover {
+            text-decoration: underline;
+
+        }
+
+        @media (max-width: 768px) {
+            .team-heading {
+                font-size: 30px;
+                font-weight: bold;
+                margin-left: 20px;
+            }
+
+            .team-paragraph {
+                font-size: 20px;
+                margin-left: 10px;
+                padding: 0 15px;
+
+            }
+
+            .team-paragraph-2 {
+                font-size: 20px;
+                margin-left: 10px;
+                padding: 0 15px;
+
+            }
+        }
+
+        @media (max-width: 480px) {
+            .team-heading {
+                font-size: 30px;
+                font-weight: bold;
+                margin-left: 20px;
+            }
+
+            .team-paragraph {
+                font-size: 20px;
+                margin-left: 10px;
+                padding: 0 10px;
+
+            }
+
+            .team-paragraph-2 {
+                font-size: 20px;
+                margin-left: 10px;
+                padding: 0 15px;
+
+            }
+        }
+
+
+        .boss-section {
+            background-color: rgb(255, 255, 255);
+            /* Black background color */
+            color: white;
+            /* White text color for contrast */
+            text-align: center;
+            /* Center align all text */
+            padding: 50px 20px;
+            /* Add padding around the section */
+        }
+
+        .section-heading {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 30px;
+            color: rgb(44, 42, 42);
+            margin-bottom: 40px;
+            font-weight: 500;
+
+        }
+
+        .boss-card-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            background-color: #f5f5f5;
+        }
+
+        .boss-card {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+        }
+
+        .boss-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .boss-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333333;
+            margin: 10px 0;
+        }
+
+        .boss-position {
+            font-size: 18px;
+            color: #777777;
+        }
+
+
+        .employee-heading {
+            font-size: 40px;
+            color: #000000;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .employee-gallery {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            /* 8 images per row */
+            gap: 10px;
+            /* Space between the images */
+            margin: 20px;
+        }
+
+        .employee-item {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 100%;
+            /* This creates a perfect square for the images */
+        }
+
+        .employee-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Ensures the image covers the div without distortion */
+            transition: transform 0.3s ease;
+            /* Smooth hover effect */
+        }
+
+        .employee-item:hover img {
+            transform: scale(1.1);
+            /* Zoom effect on hover */
+        }
+
+        .employee-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Transparent black background */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            /* Smooth transition for hover effect */
+        }
+
+        .employee-item:hover .employee-info {
+            opacity: 1;
+            /* Show employee name on hover */
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 1200px) {
+            .employee-gallery {
+                grid-template-columns: repeat(4, 1fr);
+                /* 4 images per row on smaller screens */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .employee-gallery {
+                grid-template-columns: repeat(3, 1fr);
+                /* 3 images per row for tablets */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .employee-gallery {
+                grid-template-columns: repeat(2, 1fr);
+                /* 2 images per row for mobile devices */
+            }
+        }
+
+        /* Two Sections Container */
+        .two-sections {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: 20px;
+            gap: 20px;
+        }
+
+        /* Left Section */
+        .left-section {
+            flex: 1;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .left-section h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .left-section p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Right Section */
+        .right-section {
+            flex: 1;
+            padding: 20px;
+            margin-left: 30px;
+        }
+
+        .content-box {
+            border: 2px solid red;
+            padding: 20px;
+            text-align: center;
+            border-radius: 15px;
+        }
+
+        .content-box p {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .action-button {
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 1rem;
+            cursor: pointer;
+
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .two-sections {
+                flex-direction: column;
+                align-items: center;
+                /* Centers both sections vertically */
+            }
+
+            .left-section,
+            .right-section {
+                flex: none;
+                width: 100%;
+                padding: 0 20px;
+                /* Add padding for small screens */
+            }
+
+            .content-box {
+                width: 90%;
+                max-width: 300px;
+                /* Centers and limits the box width on smaller screens */
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Topbar Start -->
+
+    <!-- Topbar End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-scroll shadow-0 border-bottom border-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/technology_twist_logo.jpeg" alt="TechnoTwist Logo" style="height: 40px;">
+            </a>
+            <a class="navbar-brand" href="index.html">
+                <h2><span class="brand-color">Techno</span><span class="brand-color-white">Twist</span></h2>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <!-- Mega Menu Dropdown -->
+                    <li class="nav-item dropdown position-static">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Services
+                        </a>
+                        <!-- Dropdown menu -->
+                        <div class="dropdown-menu w-100 mt-0" aria-labelledby="navbarDropdown"
+                            style="border-top-left-radius: 0; border-top-right-radius: 0;">
+                            <div class="container">
+                                <div class="row my-4">
+                                    <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                                        <div class="list-group list-group-flush">
+                                            <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                                                E-Commerce Frameworks
+                                            </p>
+                                            <a href="services/opencart.html"
+                                                class="list-group-item list-group-item-action">Opencart
+                                                Devlopment</a>
+                                            <a href="services/woo-commerce-development.html"
+                                                class="list-group-item list-group-item-action">Woo Commerce
+                                                Development</a>
+                                            <a href="services/shopify-development.html"
+                                                class="list-group-item list-group-item-action">Shopify
+                                                Development</a>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                                        <div class="list-group list-group-flush">
+                                            <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                                                Frontend Development
+                                            </p>
+                                            <a href="services/html-development.html"
+                                                class="list-group-item list-group-item-action">HTML
+                                                Development</a>
+
+                                            <a href="services/react-js-development.html"
+                                                class="list-group-item list-group-item-action">ReactJS
+                                                Development</a>
+                                            <a href="services/angular-js-development.html"
+                                                class="list-group-item list-group-item-action">AngularJS
+                                                Development</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
+                                        <div class="list-group list-group-flush">
+                                            <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                                                Back-End Development
+                                            </p>
+                                            <a href="services/laravel-development.html"
+                                                class="list-group-item list-group-item-action">Laravel
+                                                Development</a>
+                                            <a href="services/nodeJs-development.html"
+                                                class="list-group-item list-group-item-action">NodeJS
+                                                Development</a>
+                                            <a href="services/wordpress-development.html"
+                                                class="list-group-item list-group-item-action">WordPress
+                                                Development</a>
+                                            <a href="services/codeigniter-development.html"
+                                                class="list-group-item list-group-item-action">CodeIgniter
+                                                Development</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-3">
+                                        <div class="list-group list-group-flush">
+                                            <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                                                Mobile app Development
+                                            </p>
+                                            <a href="services/flutter-app-development.html"
+                                                class="list-group-item list-group-item-action">Flutter App
+                                                Development</a>
+                                            <a href="services/native-ios-app-development.html"
+                                                class="list-group-item list-group-item-action">IOS app
+                                                Development</a>
+                                            <a href="services/native-android-app-development.html"
+                                                class="list-group-item list-group-item-action">Android App
+                                                Development</a>
+                                            <a href="services/react-native-app-development.html"
+                                                class="list-group-item list-group-item-action">React Native
+                                                Development</a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Second Row (Newly Added) -->
+                                <div class="row my-4">
+                                    <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                                        <div class="list-group list-group-flush">
+                                            <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                                                UI/UX Designing
+                                            </p>
+                                            <a href="services/mobile-app-design.html"
+                                                class="list-group-item list-group-item-action">Mobile app design</a>
+                                            <a href="services/responsive-web-design.html"
+                                                class="list-group-item list-group-item-action">Responsive Web design</a>
+                                            <a href="services/design-prototyping.html"
+                                                class="list-group-item list-group-item-action">Design prototypinig</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                                        <div class="list-group list-group-flush">
+                                            <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                                                BPO & BPM Development
+                                            </p>
+                                            <a href="services/data-entry-outsoursing-devlopment.html"
+                                                class="list-group-item list-group-item-action">Data Entry
+                                                Outsourcing</a>
+                                            <a href="services/process-automation-devlopment.html"
+                                                class="list-group-item list-group-item-action">Process Automation</a>
+                                            <a href="services/workflow-management.html"
+                                                class="list-group-item list-group-item-action">Workflow Management</a>
+                                            <a href="services/business-analytics.html"
+                                                class="list-group-item list-group-item-action">Business Analytics</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
+                                        <div class="list-group list-group-flush">
+                                            <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                                                QA Testing & Support
+                                            </p>
+                                            <a href="services/software-testing.html"
+                                                class="list-group-item list-group-item-action">Software Testing</a>
+                                            <a href="services/support-and-maintenance.html"
+                                                class="list-group-item list-group-item-action">Support & maintenance</a>
+                                            <a href="services/mobile-testing.html"
+                                                class="list-group-item list-group-item-action">Mobile Testing</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-3">
+                                        <div class="list-group list-group-flush">
+                                            <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                                                Digital Marketing
+                                            </p>
+                                            <a href="services/search-engine-optimization.html"
+                                                class="list-group-item list-group-item-action">SEO</a>
+                                            <a href="services/social-media-optimization.html"
+                                                class="list-group-item list-group-item-action">SMO</a>
+                                            <a href="services/content-marketing.html"
+                                                class="list-group-item list-group-item-action">Content Marketing</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="custom-ecommerce-marketplace.html">Marketplace Development</a>
+                    </li>
+                    <li class="nav-item dropdown position-static">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Hire Devlopers
+                        </a>
+                        <!-- Dropdown menu -->
+                        <div class="dropdown-menu w-100 mt-0" aria-labelledby="navbarDropdown"
+                            style="border-top-left-radius: 0; border-top-right-radius: 0;">
+                            <div class="container">
+                                <div class="row my-4">
+                                    <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                                        <div class="list-group list-group-flush">
+                                            <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                                                Hire Java Script Developer
+                                            </p>
+
+                                            <a href="hire_devlopers/hire-dedicated-full-stack-developers.html"
+                                                class="list-group-item list-group-item-action">
+                                                Hire full Stack Developer</a>
+                                            <a href="hire_devlopers/hire-dedicated-react-js-developers.html"
+                                                class="list-group-item list-group-item-action">
+                                                Hire React JS Developer</a>
+                                            <a href="hire_devlopers/hire-dedicated-mern-stack-developers.html"
+                                                class="list-group-item list-group-item-action">
+                                                Hire MERN Stack Developer</a>
+                                            <a href="hire_devlopers/hire-dedicated-mean-stack-developers.html"
+                                                class="list-group-item list-group-item-action">
+                                                Hire MEAN Stack Developer</a>
+                                            <a href="hire_devlopers/hire-dedicated-node-js-developers.html"
+                                                class="list-group-item list-group-item-action">
+                                                Hire Node Js. Developer</a>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                                        <div class="list-group list-group-flush">
+                                            <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                                                Hire Web Developer
+                                            </p>
+                                            <a href="hire_devlopers/hire-dedicated-php-developers.html"
+                                                class="list-group-item list-group-item-action">Hire PHP
+                                                Developer</a>
+                                            <a href="hire_devlopers/hire-dedicated-laravel-developers.html"
+                                                class="list-group-item list-group-item-action">Hire Laravel
+                                                Developer</a>
+                                            <a href="hire_devlopers/hire-dedicated-paython-devlopers.html"
+                                                class="list-group-item list-group-item-action">Hire Paython
+                                                Developer</a>
+                                            <a href="hire_devlopers/hire-dedicated-aspdot-net-developers.html"
+                                                class="list-group-item list-group-item-action">Hire ASP. Net
+                                                Developer</a>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
+                                        <div class="list-group list-group-flush">
+                                            <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                                                E-Commerce & CMS
+                                            </p>
+                                            <a href="hire_devlopers/hire-dedicated-wordpress-developer.html"
+                                                class="list-group-item list-group-item-action">
+                                                Hire Wordpress Developer</a>
+                                            <a href="hire_devlopers/hire-dedicated-shopify-developers.html"
+                                                class="list-group-item list-group-item-action">
+                                                Hire Shopify Developer</a>
+                                            <a href="hire_devlopers/hire-dedicated-woocommerce-developers.html"
+                                                class="list-group-item list-group-item-action">
+                                                Hire WooCommerce Developer</a>
+                                            <a href="hire_devlopers/hire-dedicated-opencart-devlopers.html"
+                                                class="list-group-item list-group-item-action">
+                                                Hire Opencart Developer</a>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-3">
+                                        <div class="list-group list-group-flush">
+                                            <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                                                Hire Mobile Developers
+                                            </p>
+                                            <a href="hire_devlopers/hire-dedicated-flutter-developers.html"
+                                                class="list-group-item list-group-item-action">
+                                                Hire Flutter Developer</a>
+                                            <a href="hire_devlopers/hire-dedicated-android-developers.html"
+                                                class="list-group-item list-group-item-action">
+                                                Hire Android Developer</a>
+                                            <a href="hire_devlopers/hire-dedicated-react-native-developers.html"
+                                                class="list-group-item list-group-item-action">
+                                                Hire React Native Developer</a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row my-4">
+                                    <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                                        <div class="list-group list-group-flush">
+                                            <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                                                Hire ERP & CRM Developer
+                                            </p>
+                                            <a href="hire_devlopers/hire-dedicated-sap-devlopers.html"
+                                                class="list-group-item list-group-item-action">Hire SAP Devlopers</a>
+                                            <a href="hire_devlopers/hire-dedicated-salesforce-devlopers.html"
+                                                class="list-group-item list-group-item-action">Hire Salesforce
+                                                Devlopers</a>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown1" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Our Work
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                            <li>
+                                <a class="dropdown-item" href="portfolio.html">
+                                    <i class="fas fa-briefcase"></i> Portfolio
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="case-studies.html">
+                                    <i class="fas fa-file-alt"></i> Case Studies
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownCompany" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Company
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownCompany">
+                            <li>
+                                <a class="dropdown-item" href="about-us.html">
+                                    <i class="fas fa-info-circle me-2"></i> About Us
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="careers.html">
+                                    <i class="fas fa-briefcase me-2"></i> Careers
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="life-at-technotwist.html">
+                                    <i class="fas fa-heart me-2"></i> Life of Technotwist
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="meet-our-team.html">
+                                    <i class="fas fa-users me-2"></i> Meet Our Team
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact-us.html">
+                            <button type="button" class="btn btn-danger ms-3">Contact Us</button>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <div class="team-section">
+        <h2 class="team-heading">Meet the <span style="color: red;">Team</span></h2>
+        <p class="team-paragraph">
+            Where Expertise, Passion, and Dedication Converge to Drive Excellence
+        </p>
+        <p class="team-paragraph-2">
+            <a href="index.html" class="breadcrumb-link">Home</a> ------------
+            <a href="meet-our-team.html" class="breadcrumb-link">Meet the team</a>
+        </p>
+    </div>
+
+    <div class="boss-section">
+        <h3 class="section-heading">Each member brings a unique blend of expertise, passion, and dedication to the
+            table, working together to deliver exceptional results for our clients</h3>
+
+        <div class="boss-card-container">
+            <div class="boss-card">
+                <img src="img/boss.jpg" alt="Boss Image" class="boss-image">
+                <h2 class="boss-name">Ankush Saraswat</h2>
+                <p class="boss-position">CEO & Founder, TechnoTwist</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Testimonial Start -->
+    <div class="container-fluid training overflow-hidden py-5" style="background-color: rgb(0, 0, 0);">
+        <div class="container py-5">
+            <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+
+                <h1 style="color: #ddd;">Real People Create Real Results</h1>
+
+            </div>
+            <div class="owl-carousel testimonial-carousel wow zoomInDown" data-wow-delay="0.2s">
+                
+                <div class="boss-card">
+                    <img src="img/hr.jpg" alt="Boss Image" class="boss-image">
+                    <h2 class="boss-name">Akshita Parashar</h2>
+                    <p class="boss-position">HR Executive</p>
+                </div>
+               
+                <div class="boss-card">
+                    <img src="img/st-6.jpeg" alt="Boss Image" class="boss-image">
+                    <h2 class="boss-name">Manish Soni</h2>
+                    <p class="boss-position">Backend Devloper</p>
+                </div>
+                <div class="boss-card">
+                    <img src="img/st-2.jpeg" alt="Boss Image" class="boss-image">
+                    <h2 class="boss-name">Kanta Sharma</h2>
+                    <p class="boss-position">Fronted Devloper</p>
+                </div>
+                <div class="boss-card">
+                    <img src="img/nikhil.jpeg" alt="Boss Image" class="boss-image">
+                    <h2 class="boss-name">Nikhil Pathak</h2>
+                    <p class="boss-position">Fronted Devloper</p>
+                </div>
+                <div class="boss-card">
+                    <img src="img/st-6.jpeg" alt="Boss Image" class="boss-image">
+                    <h2 class="boss-name">Somesh Chobey</h2>
+                    <p class="boss-position">App Devloper</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+    <div class="employee-section">
+        <h2 class="employee-heading">Teamwork is the only way we work</h2>
+        <div class="employee-gallery">
+            <div class="employee-item">
+                <img src="img/st-6.jpeg" alt="Employee 1">
+                <div class="employee-info">Ram Nivas Sharma</div>
+            </div>
+
+            <div class="employee-item">
+                <img src="img/hr.jpg" alt="Employee 2">
+                <div class="employee-info">Akshita Parashar</div>
+            </div>
+
+            <div class="employee-item">
+                <img src="img/st-6.jpeg" alt="Employee 3">
+                <div class="employee-info">Manish Soni</div>
+            </div>
+
+            <div class="employee-item">
+                <img src="img/st-1.jpeg" alt="Employee 3">
+                <div class="employee-info">Kanta Sharma</div>
+            </div>
+
+            <div class="employee-item">
+                <img src="img/nikhil.jpeg" alt="Employee 3">
+                <div class="employee-info">Nikhil Pathak</div>
+            </div>
+
+            <div class="employee-item">
+                <img src="img/st-6.jpeg" alt="Employee 3">
+                <div class="employee-info">Somesh Chobey</div>
+            </div>
+
+
+            <!-- Add more employee items as needed -->
+        </div>
+    </div>
+
+    <div class="two-sections">
+        <!-- Left Section -->
+        <div class="left-section">
+            <h2>Ready to take your career to the next level?</h2>
+            <p>Our dynamic team of organised thinkers, creative innovators, and trendsetting experts collaborates to
+                empower & deliver exceptional value through cutting-edge technology services worldwide.</p>
+        </div>
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <div class="content-box">
+                <p>Ready for a Change? Checkout Our Current openings</p>
+                <a href="careers.html" class="action-button">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-white text-center text-lg-start" style="background-color: #23242a;">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!--Grid row-->
+            <div class="row mt-4">
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/technology_twist_logo.jpeg" alt="TechnoTwist Logo" style="height: 60px;">
+                    </a>
+
+
+                    <h5 style="margin-top: 20px;">"Our IT company provides the best digital solutions to unlock the
+                        potential for your business
+                        growth."</h5>
+                    <div class="mt-4">
+
+                        <a href="https://www.facebook.com/twistintechnology/" class="social-icon" type="button"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/company/technology-twist/" class="social-icon"
+                            type="button"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/technotwistbhl/" class="social-icon" type="button"><i
+                                class="fab fa-instagram"></i></a>
+
+                    </div>
+                </div>
+
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h4>GET IN TOUCH</h4>
+                    <ul class="fa-ul" style="margin-left: 1.65em;">
+                        <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">C-61, R K
+                                Colony,Bhilwara,Rajasthan 311001 </span>
+                        </li>
+                        <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-envelope"></i></span><span
+                                class="ms-2">technologytwist@gmail.com</span>
+                        </li>
+                        <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+91 98286
+                                92328</span>
+                        </li>
+                        <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-print"></i></span><span class="ms-2">+91 98286
+                                92328</span>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+
+                    <h4>OFFICE TIME</h4>
+                    <table class="table text-center text-white">
+                        <tbody class="font-weight-normal">
+                            <tr>
+                                <td>Mon - Fri:</td>
+                                <td>9am - 6pm</td>
+                            </tr>
+                            <tr>
+                                <td>Sat - Sun:</td>
+                                <td>Holiday</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2024 Copyright:
+            <a class="text-white" href="https://technologytwist.com">technologytwist.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Initialization for ES Users
+        import { Tab, initMDB } from "mdb-ui-kit";
+
+        initMDB({ Tab });
+    </script>
