@@ -154,6 +154,22 @@
     color: var(--bs-secondary) !important;
 }
 
+.contact-link {
+    color: white !important;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    transition: color 0.3s ease;
+
+}
+
+.contact-link {
+    color: white !important;
+    text-decoration: none;
+    font-size: 16px;
+   transition: color 0.3s ease;
+   
+}
 
 @media (max-width: 768px) {
     .topbar {
@@ -162,7 +178,6 @@
 }
 
 /*** Topbar End ***/
-
 
 
 /*** Navbar Start ***/
@@ -796,20 +811,20 @@ input#custom-tab5:checked~.custom-content section:nth-of-type(5) {
 
 /*** Country End ***/
 
+/*** testimonial card start ***/
 .team-card {
     text-align: center;
     background-color: #000000;
     padding: 20px;
-    
     box-shadow: 0 4px 8px rgba(177, 177, 177, 0.1);
     max-width: 300px;
 }
 
 .team-image {
     width: 100%;
-    height: 200px;
+    height: 300px;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-bottom: 20px;
 }
 
@@ -849,13 +864,6 @@ input#custom-tab5:checked~.custom-content section:nth-of-type(5) {
 
 @media (max-width: 768px) {
 
-
-    .card img {
-        height: 180px;
-        /* Adjust the height for mobile */
-        object-fit: cover;
-    }
-
     .card-title {
         font-size: 1.2rem;
     }
@@ -876,6 +884,7 @@ input#custom-tab5:checked~.custom-content section:nth-of-type(5) {
     }
 }
 
+/*** testimonial card End ***/
 
 /* Main container styles */
 .tabs-container {
@@ -1139,14 +1148,11 @@ input#custom-tab5:checked~.custom-content section:nth-of-type(5) {
     margin-bottom: 20px;
 }
 
-.irreplaceable:hover {
-    transform: translateY(-5px);
-    /* Slight lift on hover */
-}
+
 
 /* Icon styles */
 .irreplaceable-body i {
-    color: #e4083f;
+    color: #eb003b;
     /* Icon color */
     font-size: 50px;
     /* Adjusted icon size */
